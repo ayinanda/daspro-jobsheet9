@@ -4,18 +4,30 @@ public class SearchNilai09 {
     public static void main(String[] args) {
         Scanner sc09 = new Scanner(System.in);
 
-        int [] arrNIlai = {80, 85, 78, 96, 90, 82, 86} ;
-        int key = 90;
-        int hasil = 0;
+        int[] arrNilai = new int[7];
+        int key = 78;
 
-        for (int i = 0; i < arrNIlai.length; i++) {
-            if (key == arrNIlai[i]) {
+        System.out.print(" Masukkan banyaknya nilai yang akan diinput : ");
+        int jumlahElemen = sc09.nextInt();
+
+        for (int i = 1; i<7; i++) {
+            System.out.print( " Masukkan nilai mahasiswa ke- " + (i) + " : ");
+            arrNilai[i] = sc09.nextInt();
+        }
+        System.out.print( " Masukkan nilai yang ingin dicari : ");
+        key = sc09.nextInt();
+
+        int hasil = -1;
+        for (int i=0; i<arrNilai.length; i++) {
+            if (arrNilai[i] == key) {
                 hasil = i;
                 break;
             }
-        } 
-        System.out.println();
-        System.out.println(" Nilai " + key + " ketemu di indeks ke- " + hasil );
-        System.out.println();
+        }
+        if (hasil !=-1) {
+            System.out.println(" Nilai " + key + " ketemu, merupakan nilai mahasiswa ke- " + hasil);
+        } else {
+            System.out.println(" Nilai yang dicari tidak ditemukan " );
+        }
     }
 }
